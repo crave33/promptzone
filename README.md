@@ -71,6 +71,8 @@ PromptZone is a desktop app to manage prompt libraries, randomize prompt sets ac
 - Inject selected prompt into slot.
 - Inject + Lock sets value and locks slot.
 - Shows media preview for files with same basename as prompt.
+  
+<img src="Previews/10.png" width="500">
 
 ### 9) Media preview support
 - Prompt preview media lookup: same folder + same basename as prompt file.
