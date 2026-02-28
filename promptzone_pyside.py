@@ -119,7 +119,7 @@ THEME_PRESETS = {
         "list_bg": "#bcc6d8",
         "list_select": "#acb6ca",
     },
-    "Cyberpunk 2077": {
+    "Neon Runner": {
         "topbar": "#0a0f1f",
         "panel": "#0a0d1a",
         "panel_2": "#121933",
@@ -170,7 +170,7 @@ THEME_PRESETS = {
         "list_bg": "#232636",
         "list_select": "#2b2e3e",
     },
-    "VS Code Dark Modern": {
+    "Slate Code": {
         "topbar": "#181818",
         "panel": "#1F1F1F",
         "panel_2": "#181818",
@@ -187,7 +187,7 @@ THEME_PRESETS = {
         "list_bg": "#1F1F1F",
         "list_select": "#0078D4",
     },
-    "WhatsApp": {
+    "Mint Messenger": {
         "topbar": "#075E54",
         "panel": "#ECE5DD",
         "panel_2": "#DCF8C6",
@@ -204,7 +204,7 @@ THEME_PRESETS = {
         "list_bg": "#ECE5DD",
         "list_select": "#DCF8C6",
     },
-    "Spotify": {
+    "Lime Night": {
         "topbar": "#191414",
         "panel": "#121212",
         "panel_2": "#191414",
@@ -221,7 +221,7 @@ THEME_PRESETS = {
         "list_bg": "#121212",
         "list_select": "#2A2A2A",
     },
-    "Steam": {
+    "Navy Harbor": {
         "topbar": "#171A21",
         "panel": "#1B2838",
         "panel_2": "#16202D",
@@ -255,7 +255,7 @@ THEME_PRESETS = {
         "list_bg": "#2B2A2D",
         "list_select": "#3A383C",
     },
-    "Photoshop": {
+    "Blue Canvas": {
         "topbar": "#001E36",
         "panel": "#0B2239",
         "panel_2": "#0F2A44",
@@ -291,10 +291,10 @@ ICON_FILES = {
     "new_prompt": "note_add",
 }
 
-BRAND_ICON_PATH = Path("assets") / "branding" / "promptzone_logo.png"
-BRAND_ICON_ICO = Path("assets") / "branding" / "promptzone_logo.ico"
-FONT_DIR = Path("assets") / "fonts" / "TitilliumWeb"
-ROBOTO_DIR = Path("assets") / "fonts" / "Roboto"
+BRAND_ICON_PATH = Path("branding") / "promptzone_logo.png"
+BRAND_ICON_ICO = Path("branding") / "promptzone_logo.ico"
+FONT_DIR = Path("fonts") / "TitilliumWeb"
+ROBOTO_DIR = Path("fonts") / "Roboto"
 
 
 class AutoResizeText(QtWidgets.QTextEdit):
@@ -359,6 +359,17 @@ def app_root() -> Path:
     if getattr(sys, "frozen", False):
         return Path(sys.executable).resolve().parent
     return Path(__file__).resolve().parent
+
+
+def assets_root() -> Path:
+    base = app_root() / "assets"
+    if base.exists():
+        return base
+    if getattr(sys, "frozen", False):
+        alt = app_root() / "_internal" / "assets"
+        if alt.exists():
+            return alt
+    return base
 
 
 def _resolve_core_from_widget(widget: QtWidgets.QWidget):
@@ -1934,7 +1945,7 @@ class PromptZoneWindow(QtWidgets.QMainWindow):
         self._geometry_restored = False
         self.resize(1200, 820)
 
-        self.icon_dir = app_root() / "assets" / "icons"
+        self.icon_dir = assets_root() / "icons"
         self._icons = {"black": {}, "white": {}}
         self._load_icons()
         self._icon_color = "white"
@@ -4445,7 +4456,8 @@ class PromptZoneWindow(QtWidgets.QMainWindow):
             self._apply_dynamic_exclude_filter(slot_id)
 
     def _load_custom_fonts(self):
-        font_dir = app_root() / FONT_DIR
+        assets_dir = assets_root()
+        font_dir = assets_dir / FONT_DIR
         if not font_dir.exists():
             font_dir = None
         if font_dir:
@@ -4454,7 +4466,7 @@ class PromptZoneWindow(QtWidgets.QMainWindow):
                     QtGui.QFontDatabase.addApplicationFont(str(ttf))
                 except Exception:
                     pass
-        roboto_dir = app_root() / ROBOTO_DIR
+        roboto_dir = assets_dir / ROBOTO_DIR
         if roboto_dir.exists():
             for ttf in roboto_dir.glob("*.ttf"):
                 try:
@@ -4463,8 +4475,9 @@ class PromptZoneWindow(QtWidgets.QMainWindow):
                     pass
 
     def _set_window_icon(self):
-        ico = app_root() / BRAND_ICON_ICO
-        png = app_root() / BRAND_ICON_PATH
+        assets_dir = assets_root()
+        ico = assets_dir / BRAND_ICON_ICO
+        png = assets_dir / BRAND_ICON_PATH
         if ico.exists():
             self.setWindowIcon(QtGui.QIcon(str(ico)))
         elif png.exists():
