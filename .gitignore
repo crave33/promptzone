@@ -1,0 +1,13 @@
+﻿# PromptZone user data (local only)
+promptzone_pyside/Prompt_Library/**
+!promptzone_pyside/Prompt_Library/.gitkeep
+promptzone_pyside/settings.json
+promptzone_pyside/tags.json
+promptzone_pyside/weights.json
+promptzone_pyside/selected_prompts.txt
+
+# Build/cache artifacts
+promptzone_pyside/dist/
+promptzone_pyside/build/
+promptzone_pyside/__pycache__/
+*.pyc
