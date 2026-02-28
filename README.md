@@ -63,7 +63,7 @@ PromptZone is a desktop app to manage prompt libraries, randomize prompt sets ac
 - Manage slots (add/remove/reorder/rename/prefix/enable/minimize/auto-prefix).
   
 <img src="Previews/7.png" width="500">
-<img src="Previews/8.png" width="500">
+<img src="Previews/8_1.png" width="500">
 <img src="Previews/9.png" width="500">
 
 ### 8) Browse and inject prompts
