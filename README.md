@@ -1,4 +1,4 @@
-# PromptZone (PySide6)
+# PromptZone 
 
 PromptZone is a desktop app to manage prompt libraries, randomize prompt sets across configurable slots, and export combined output.
 
