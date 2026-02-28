@@ -2,7 +2,7 @@
 
 PromptZone is a desktop app to manage prompt libraries, randomize prompt sets across configurable slots, and export combined output.
 
-<img src="previews/1.png" width="1000">
+<img src="Previews/1.png" width="1000">
 
 ## What The App Can Do
 
@@ -15,14 +15,14 @@ PromptZone is a desktop app to manage prompt libraries, randomize prompt sets ac
   - locked (keep current text)
   - included/excluded from randomization
 - Randomize all slots at once or randomize one slot at a time.
-<img src="previews/2.png" width="500">
+<img src="Previews/2.png" width="500">
 
 ### 2) Build multiple prompt sets in one run
 - `How many sets` controls batch count (1-50).
 - Multi-set results are separated by the internal divider:
   - `------------------------------------------------`
 
-<img src="previews/3.png" width="500">
+<img src="Previews/3.png" width="500">
 
 ### 3) Category selection per slot
 - Each slot supports category mode:
@@ -31,7 +31,7 @@ PromptZone is a desktop app to manage prompt libraries, randomize prompt sets ac
   - one or more specific categories
 - Category menus are searchable/filterable in the right-panel exclude system and in browse dialogs.
   
-<img src="previews/4.png" width="500">
+<img src="Previews/4.png" width="500">
 
 ### 4) Exclude system
 - Exclude specific categories per slot.
@@ -40,7 +40,7 @@ PromptZone is a desktop app to manage prompt libraries, randomize prompt sets ac
 - Drag-check behavior supported in exclude checkbox lists.
 - `Clear excludes` clears all category excludes.\
   
-<img src="previews/5.png" width="500">
+<img src="Previews/5.png" width="500">
 
 ### 5) Tag system + weighted sampling
 - Tags are stored in `tags.json`.
@@ -48,7 +48,7 @@ PromptZone is a desktop app to manage prompt libraries, randomize prompt sets ac
 - Preferred tags influence weighted randomization (via `Weight strength`).
 - Tags can be globally excluded from generation (`Exclude tag` button).
 
-<img src="previews/6.png" width="500">
+<img src="Previews/6.png" width="500">
 
 ### 6) Repeat handling
 - `Avoid repeats (session)` avoids reusing files until pool exhaustion.
@@ -62,9 +62,9 @@ PromptZone is a desktop app to manage prompt libraries, randomize prompt sets ac
 - Add custom tags.
 - Manage slots (add/remove/reorder/rename/prefix/enable/minimize/auto-prefix).
   
-<img src="previews/7.png" width="500">
-<img src="previews/8.png" width="500">
-<img src="previews/9.png" width="500">
+<img src="Previews/7.png" width="500">
+<img src="Previews/8.png" width="500">
+<img src="Previews/9.png" width="500">
 
 ### 8) Browse and inject prompts
 - Browse prompt files for any slot with search over filename + content.
