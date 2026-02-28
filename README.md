@@ -143,7 +143,7 @@ PromptZone is a desktop app to manage prompt libraries, randomize prompt sets ac
 - `Clear excludes` and `Reset repeats`.
 
 ---
-
+ 
 ## Dialogs
 
 ## Manage Slots
